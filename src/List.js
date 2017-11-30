@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
+import Item from './Item'
 import './List.css';
-import Item from './Item.js';
 
 class List extends Component {
+  createList() {
+    if (this.props.items.length > 0) {
+      return this.props.items.map((item, i) => <Item text={item} key={i} />)
+    }
+  }
   render() {
-    const itemElements = [];
-    let counter = 0;
-    this.props.list.forEach((item) => {
-      counter++;
-      itemElements.push(<Item key={counter} text={item} />);
-    });
     return (
       <div className="List">
         My List:
-        <ul>{itemElements}</ul>
+        <ul>
+          {this.createList()}
+        </ul>
       </div>
     );
   }
