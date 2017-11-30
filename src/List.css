@@ -1,3 +1,10 @@
 .List {
 	width: 50%;
+	float: left;
+}
+
+.List-Form {
+	float: right;
+	width: 50%;
+	margin: auto;
 }
